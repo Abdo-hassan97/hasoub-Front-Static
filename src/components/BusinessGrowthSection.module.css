@@ -1,0 +1,91 @@
+/* BusinessGrowthSection.module.css */
+.businessGrowthSection {
+    width: 100%;
+    height: clamp(350px, 55vh, 550px); /* خليه أكبر شويه */
+    background-image: url('../../src/assets/images/BusinessGrowth.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay {
+    inset: 0;
+    position: absolute;
+    background: rgba(9, 16, 32, 0.6); /* أوفرلي أزرق داكن */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13rem; /* زودت المسافة بين الكلام وزر الفيديو */
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  
+  .content {
+    color: #fff;
+    max-width: 700px; /* خليه أعرض شويه */
+  }
+  
+  .eyebrow {
+    color: #fd5e16;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .title {
+    font-size: 2.4rem; /* أكبر شويه */
+    margin: 0 0 1rem 0;
+    color: white;
+
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: white;
+
+  }
+  
+  .playButton {
+    background: #fd5e16;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* أكبر شويه */
+    height: 60px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .playButton:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .contentWrapper {
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem; /* زودت المسافة شوية */
+      text-align: center;
+    }
+  
+    .playButton {
+      margin-top: 1rem;
+    }
+  }
+  

@@ -1,0 +1,178 @@
+.consultationSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 6rem 2rem;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 478px;
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* ✅ Content Wrapper */
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10rem;
+  flex-wrap: wrap;
+}
+
+/* ✅ Left Text */
+.textBlock {
+  flex: 1 1 400px;
+  color: white;
+  margin-left: 4rem;
+  margin-bottom: 4rem;
+}
+
+.eyebrow {
+  font-size: 0.875rem;
+  color: #ff7a00;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 400px;
+  color: #b7bec8;
+}
+
+/* ✅ Right Form */
+.formBlock {
+  flex: 1 1 368px;
+  margin-right: 5rem;
+  background: #ffece4;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form input {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.form button {
+  padding: 0.75rem 1rem;
+  background-color: #ff5a00;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form button:hover {
+  background-color: #e64b00;
+}
+
+
+
+
+
+
+/* ✅✅✅ ✅✅✅ RESPONSIVE FIXED ✅✅✅ ✅✅✅ */
+
+/* ✅ Tablets */
+@media (max-width: 1024px) {
+  .contentWrapper {
+    gap: 4rem;
+  }
+
+  .textBlock {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .formBlock {
+    margin-right: 0;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 768px) {
+  .consultationSection {
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    min-height: auto;
+    background-size: cover;
+    background-position: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.5rem;
+  }
+
+  .textBlock {
+    margin-left: 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    max-width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .formBlock {
+    width: 100%;
+    margin-right: 0;
+    padding: 1.3rem;
+  }
+}
+
+/* ✅ Small Mobile */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .form input {
+    font-size: 0.8rem;
+  }
+
+  .form button {
+    font-size: 0.85rem;
+    padding: 0.65rem;
+  }
+}

@@ -1,0 +1,912 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+
+.homePage {
+  font-family: "Rubik", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0b1c32;
+  width: 100%;
+}
+
+.heroSection {
+  position: relative;
+  min-height: 70vh;
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  --hero-inline-pad: clamp(2rem, 7vw, 8rem);
+  padding: clamp(2rem, 5vw, 4.5rem) var(--hero-inline-pad);
+  background-color: #041c36;
+  isolation: isolate;
+  margin: 0;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  transition: background-image 0.6s ease-in-out, transform 0.6s ease-in-out;
+  filter: saturate(1.05) contrast(0.95) brightness(0.75);
+  z-index: -2;
+}
+
+.heroGradient {
+  position: absolute;
+  inset: 0;
+  /* background: radial-gradient(circle at 15% 30%, rgba(8, 119, 196, 0.55), transparent 55%),
+    linear-gradient(120deg, rgba(4, 27, 53, 0.95) 0%, rgba(4, 17, 36, 0.6) 60%, rgba(4, 11, 22, 0.2) 100%); */
+  z-index: -1;
+}
+
+.heroContent {
+  position: relative;
+  max-width: 640px;
+  color: #ffffff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heroTag {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #FD5E16;
+  font-weight: 600;
+}
+
+.heroTitle {
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: 0.8rem;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.heroTitle span {
+  display: inline-block;
+}
+
+.heroLayer {
+  width: clamp(2.5rem, 4vw, 3.5rem);
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.heroAccent {
+  color: #ffffff;
+}
+
+.heroSubtitle {
+  max-width: 600px;
+  color: white;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.heroCta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 2.25rem;
+  text-decoration: none;
+
+  border-radius: 999px;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, #ff7b1f, #ff4d00);
+  color: #ffffff;
+  box-shadow: 0 18px 35px rgba(255, 104, 24, 0.35);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.heroCta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 24px 45px rgba(255, 104, 24, 0.5);
+}
+
+.heroArrows {
+  position: absolute;
+  right: var(--hero-inline-pad);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.arrowButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.arrowButton:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(-2px);
+}
+
+.arrowIcon {
+  font-size: 1.1rem;
+  color: currentColor;
+}
+
+.heroDots {
+  position: absolute;
+  bottom: 2.2rem;
+  left: var(--hero-inline-pad);
+  display: flex;
+  gap: 0.65rem;
+}
+
+.dot {
+  width: 42px;
+  height: 4px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.activeDot {
+  background: #ff7b1f;
+  width: 58px;
+}
+
+/* ========================= */
+/* Second Section (Our Company) */
+/* ========================= */
+
+.secondSection {
+  position: relative;
+  width: 100%;
+  /* مسافة من فوق والجنبين عشان التايتل والخلفية يرتاحوا */
+  /* padding: 6rem 5rem 4rem; */
+  background-color: #04224a;
+  background-image: url("/src/assets/images/Home/secoundsection.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  /* نخليها visible عشان نص الكارت ينزل تحت حدود السكشن */
+  overflow: visible;
+}
+
+.secondSectionOverlay {
+  position: absolute;
+  inset: 0;
+  /* background: radial-gradient(circle at 10% 20%, rgba(8, 119, 196, 0.4), transparent 60%),
+    linear-gradient(135deg, rgba(4, 27, 53, 0.95) 0%, rgba(4, 17, 36, 0.9) 60%, rgba(4, 11, 22, 0.7) 100%); */
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.secondSectionInner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+  /* خلي المحتوى كله (الكروت والعنوان) فوق الباكجراوند والـ overlay */
+  z-index: 1;
+}
+
+.secondSectionText {
+  /* ننزل الكلام شوية لتحت من غير ما نحرك الخلفية ولا الكروت */
+  padding-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.secondSectionEyebrow {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.06);
+  margin: 0;
+}
+
+.secondSectionTitle {
+  /* من غير margin عشان ما يزقش باقي العناصر */
+  margin-top: 0;
+  font-size: clamp(2rem, 3.4vw, 3.7rem);
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.secondSectionCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+  /* مسافة صغيرة بعد العنوان */
+  margin-top: 3rem;
+}
+
+
+.secondCard {
+  position: relative;
+  max-width: 360px;
+  width: 100%;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  /* نزّل الكارت لتحت بحيث جزء كبير منه يطلع برة السكشن للـ body */
+  /* box-shadow: 0 26px 45px rgba(0, 0, 0, 0.45); */
+  transform: translateY(80px);
+}
+
+.secondCard::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 35%;
+  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent); */
+  pointer-events: none;
+}
+
+.secondCard:hover {
+  /* الاحتفاظ بالسيليكتور لسهولة التخصيص لاحقاً بدون أن يكون فاضي بالكامل */
+  transform: translateY(80px);
+}
+
+.secondCardImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.secondCardLabel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5rem;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0.6rem;
+  pointer-events: none;
+  /* شريط غامق فوق الصورة زي الريفرنس */
+  /* background: rgba(0, 0, 0, 0.85); */
+}
+
+.secondCardLabel span {
+  display: inline-block;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  /* background: #f15b22; */
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  /* box-shadow: 0 18px 35px rgba(241, 91, 34, 0.45); */
+}
+
+/* ========================= */
+/* Third Section (Our Products) */
+/* ========================= */
+
+.thirdSection {
+  position: relative;
+  width: 100%;
+  padding: 6rem 0 6rem;
+  /* نخلي الخلفية اللي بالصورة هي اللي باينة، مش لون أبيض يغطيها */
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.thirdSectionBackground {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  /* نخليها تحت المحتوى لكن فوق خلفية الصفحة */
+  z-index: 0;
+}
+
+.thirdSectionInner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.thirdSectionHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.thirdSectionEyebrow {
+  font-size: 1.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #ff6a00;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.thirdSectionSubheading {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: black;
+  font-weight: 700;
+}
+
+.thirdCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.thirdCard {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 22px 45px rgba(18, 23, 30, 0.12);
+  overflow: hidden;
+}
+
+.thirdCardImageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.thirdCardImageWrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thirdCardIcon {
+  position: absolute;
+  right: -1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 25px rgba(15, 22, 34, 0.25);
+}
+
+.thirdCardIcon img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.thirdCardContent {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.thirdCardContent h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.thirdCardContent p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0 0 0.5rem;
+}
+
+.thirdCardLink {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #ff6a00;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.thirdCardArrow {
+  font-size: 0.9rem;
+}
+
+/* ========================= */
+/* Fourth Section (Vendors) */
+/* ========================= */
+
+.fourthSection {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  padding: 5rem clamp(2rem, 6vw, 4.5rem);
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 55%),
+    #022a5a;
+  border-radius: clamp(1.5rem, 6vw, 4rem);
+  margin: 6rem auto;
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 28px 65px rgba(3, 16, 35, 0.45);
+}
+
+.fourthInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.fourthHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.fourthHeaderPrimary {
+  max-width: 520px;
+}
+
+.fourthEyebrow {
+  font-size: 0.85rem;
+  /* text-transform: uppercase; */
+  font-weight: 700;
+  /* letter-spacing: 0.2em; */
+  color: #ff6a00;
+  margin-bottom: 0.7rem;
+  margin-top: -2rem;
+
+}
+
+.fourthTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #DED5C4;
+}
+
+.fourthDescription {
+  flex: 1;
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #EDECEA;
+}
+
+.vendorCarousel {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.vendorArrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #f2f4f8;
+  color: #0a1533;
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.vendorArrow:hover {
+  transform: translateY(-2px);
+}
+
+.vendorViewport {
+  flex: 1;
+  overflow: hidden;
+}
+
+.vendorTrack {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.vendorSlide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding: 0.25rem;
+}
+
+.vendorLogoCard {
+  /* background: #ffffff; */
+  border-radius: 2rem;
+  padding: 2.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0 25px 55px rgba(8, 15, 40, 0.3); */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vendorLogoCard img {
+  width: 120%;
+  max-height: 350px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 8px rgba(9, 12, 20, 0.25));
+  transition: transform 0.25s ease;
+}
+
+.vendorLogoCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  /* box-shadow: 0 35px 75px rgba(8, 15, 40, 0.35); */
+}
+
+.vendorLogoCard:hover img {
+  transform: scale(1.08);
+}
+
+.vendorDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.vendorDot {
+  width: 32px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, width 0.2s ease;
+}
+
+.activeVendorDot {
+  width: 42px;
+  background: #ff6a00;
+}
+
+/* ========================= */
+/* Fifth Section (Customers) */
+/* ========================= */
+
+.fifthSection {
+  width: 100%;
+  padding: 5rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.fifthHeader {
+  text-align: center;
+}
+
+.fifthEyebrow {
+  color: #FD5E16;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  margin-bottom: 0.5rem;
+}
+
+.fifthTitle {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: #091020;
+}
+
+.fifthCarousel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+.customerArrow {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  color: #091020;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.customerArrow:hover:not(.disabledArrow) {
+  background: #ff6a00;
+  color: #ffffff;
+}
+
+.disabledArrow {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.customerViewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.customerTrack {
+  display: flex;
+  gap: 1.25rem;
+  transition: transform 0.5s ease;
+  --customers-per-view: 5;
+}
+
+.customerSlide {
+  position: relative;
+  width: calc(100% / var(--customers-per-view));
+  border-radius: 1.5rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #e3e8f0;
+  transform: translateY(0);
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+}
+
+.customerSlide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.customerOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.65));
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.customerOverlay p {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.customerOverlay h3 {
+  margin: 0.35rem 0 0;
+  font-size: 1.1rem;
+}
+
+.customerArrowIcon {
+  align-self: flex-end;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 5px solid #FD5E16;
+  color: #FD5E16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.customerSlide:hover {
+  transform: translateY(12px);
+  filter: grayscale(0.6) opacity(0.95);
+
+  /* box-shadow: 0 22px 45px rgba(9, 16, 30, 0.3); */
+  /* filter: none; */
+}
+
+.customerSlide:hover .customerOverlay {
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .thirdCardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .thirdCard {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .thirdSection {
+    padding: 4rem 0 4rem;
+  }
+
+  .thirdCard {
+    grid-template-columns: 1fr;
+  }
+
+  .thirdCardImageWrapper {
+    max-height: 220px;
+  }
+
+  .thirdCardIcon {
+    right: 1rem;
+    top: auto;
+    bottom: -2rem;
+    transform: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .thirdSectionInner {
+    padding-inline: 1.25rem;
+  }
+
+  .thirdCardContent {
+    padding: 1.5rem 1.5rem 1.75rem;
+  }
+
+  .fourthHeader {
+    flex-direction: column;
+  }
+
+  .vendorSlide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vendorCarousel {
+    flex-direction: column;
+  }
+
+  .vendorViewport {
+    width: 100%;
+  }
+
+  .vendorTrack {
+    width: 100%;
+  }
+
+  .vendorArrow {
+    order: -1;
+  }
+}
+
+@media (max-width: 992px) {
+  .heroSection {
+    min-height: 65vh;
+  }
+
+  .heroTag {
+    letter-spacing: 0.3rem;
+  }
+
+  .heroArrows {
+    right: clamp(1.5rem, 6vw, 5rem);
+  }
+
+  .secondSectionCards {
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    --hero-inline-pad: clamp(1.5rem, 9vw, 4rem);
+    padding: 2rem var(--hero-inline-pad);
+    min-height: 75vh;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.25rem, 7vw, 3.1rem);
+    flex-wrap: wrap;
+    white-space: normal;
+    gap: 0.5rem;
+  }
+
+  .heroLayer {
+    width: clamp(2rem, 8vw, 3rem);
+  }
+
+  .heroArrows {
+    position: static;
+    flex-direction: row;
+    margin-top: 1.75rem;
+  }
+
+  .heroDots {
+    left: 2rem;
+    bottom: 1.5rem;
+  }
+
+  .secondSectionEyebrow {
+    font-size: 2.6rem;
+  }
+
+  .secondSectionTitle {
+    margin-top: -1.8rem;
+    font-size: 1.8rem;
+  }
+
+  .secondSectionCards {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroSection {
+    padding: 1.75rem var(--hero-inline-pad);
+  }
+
+  .heroTag {
+    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
+  }
+
+  .heroCta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .heroDots {
+    left: 1.75rem;
+  }
+
+  .secondSectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .secondCardLabel span {
+    width: 80%;
+    max-width: 260px;
+    font-size: 0.9rem;
+  }
+}
+

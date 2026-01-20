@@ -1,0 +1,515 @@
+/* ----------------- GLOBAL STYLES ----------------- */
+.row.g-0 {
+  margin: 0;
+  width: 100%;
+}
+
+/* Logo Column (25%) */
+.col-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent; /* allow underlying page background to show through */
+  position: relative;
+  z-index: 10000;
+}
+
+/* Make the full header row sticky so the logo column and header content stick together */
+.stickyRow {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  background: transparent; /* keep row transparent; bars inside provide their own backgrounds */
+}
+
+.logoContainer {
+  /* width: 100%; */
+  height: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.logo {
+width: 100%;
+height:100% ;
+}
+
+/* Content Column (75%) */
+.col-9 {
+  padding: 0;
+}
+
+/* ----------------- GLOBAL WRAPPER ----------------- */
+/* headerWrapper uses no layout properties here; visual styles remain in other rules */
+
+/* ----------------- TOP BAR ----------------- */
+.topBar {
+  background: #042C5C;
+  color: #fff;
+  height: 2.5rem; /* 44px */
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+/* make topBar a positioned ancestor so absolute burger can sit at viewport right */
+.topBar {
+  position: relative;
+}
+
+.topContainer {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.topContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 83%;
+  padding: 0 2%;
+}
+
+/* Location (Left) */
+.topLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0; /* Removed the left padding */
+}
+
+.locIcon {
+  width: 1.4rem;
+  height: 1.6rem;
+  object-fit: contain;
+}
+
+.locationText {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* Social icons */
+.topRight {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.socialLink img {
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
+  transition: 0.2s;
+}
+
+.socialLink:hover img {
+  opacity: 0.7;
+}
+
+/* Mobile burger (placed at the right of the screen) */
+.mobileBurger {
+  display: inline-flex; /* visible by default on small screens; `d-lg-none` will hide on lg+ */
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.25rem;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+/* ----------------- LOWER NAV ----------------- */
+.lowerBar {
+  background: #ffffff;
+  width: 100%;
+  /* margin-left: -1%; */
+}
+
+.navbar {
+  padding: 0.6rem 0;
+  /* min-height: 4.5rem; */
+  width: 100%;
+}
+
+.navContainer {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.navCollapse {
+  width: 100%;
+}
+
+.navContent {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  justify-content: space-between;
+  padding: 0 2%;
+}
+
+/* NAV LINKS */
+.navLinks {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+  margin-left: 0; /* Removed the left margin */
+  flex: 1;
+}
+
+.link {
+  color: #1d2b3a !important;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.35rem 0;
+  transition: 0.2s ease;
+}
+
+.link:hover {
+  color: #FD5E16 !important;
+  text-decoration: none;
+}
+
+/* Active link */
+.activeLink {
+  color: #FD5E16 !important;
+  border-bottom: 3px solid #FD5E16;
+  padding-bottom: 3px;
+}
+
+/* RIGHT SIDE GROUP */
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-left: auto;
+}
+
+/* Search */
+.searchBtn {
+  background: transparent;
+  border: none;
+  padding: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.searchBtn:hover {
+  background-color: rgba(250, 67, 24, 0.1);
+}
+
+.searchIcon {
+  width: 1.1rem;
+  height: 1.1rem;
+  transition: filter 0.3s ease;
+}
+
+.searchBtn:hover .searchIcon {
+  filter: invert(39%) sepia(84%) saturate(1854%) hue-rotate(350deg) brightness(98%) contrast(98%);
+}
+
+/* Quote button */
+.quoteBtn {
+  display: inline-block;
+  background: #ff6a00;
+  color: #ffffff;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.quoteBtn:hover {
+  background: #e55a00;
+}
+/* ============================
+   TABLET LANDSCAPE – MAX 1024px
+   ============================ */
+@media (max-width: 1024px) and (min-width: 768px) {
+  
+
+  /* ROW FIX */
+  .row.g-0 {
+    flex-wrap: nowrap;
+  }
+
+  /* LOGO (25%) remains visible but gets smaller */
+  .col-3 {
+    display: flex !important;
+    width: 25%;
+    max-width: 25%;
+  }
+
+  .logo {
+    width: 100%;
+    height: auto;
+  }
+
+  /* HEADER RIGHT SIDE (75%) */
+  .customheader {
+    width: 75% !important;
+    max-width: 75% !important;
+  }
+
+  /* TOP BAR */
+  .topBar {
+    height: 2.2rem;
+  }
+
+  .topContent {
+    width: 90%;
+    padding: 0 1%;
+  }
+
+  .locationText {
+    font-size: 0.78rem;
+  }
+
+  .socialLink img {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  /* LOWER NAV */
+  .navContent {
+    width: 90%;
+    padding: 0 1%;
+  }
+
+  .navLinks {
+    gap: 1.2rem;
+  }
+
+  .link {
+    font-size: 0.9rem;
+  }
+
+  /* RIGHT SIDE BUTTONS */
+  .rightGroup {
+    gap: 0.6rem;
+  }
+
+  .searchIcon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .quoteBtn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================
+   TABLET PORTRAIT – MAX 768px
+   ============================ */
+@media (max-width: 768px) {
+
+  /* Hide left logo column */
+  .col-3 {
+    display: none !important;
+  }
+
+  /* Header takes full width */
+  .customheader {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* TOP BAR */
+  .topContent {
+    width: 95%;
+    padding: 0.4rem 1rem;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+  }
+
+  .locationText {
+    font-size: 0.75rem;
+  }
+
+  .socialLink img {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  /* NAVIGATION */
+  .navContent {
+    flex-direction: column;
+    width: 95%;
+    padding: 0 1rem;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .link {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* Icons & Quote */
+  .rightGroup {
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 0.8rem;
+  }
+
+  .quoteBtn {
+    font-size: 0.95rem;
+    padding: 0.55rem 1rem;
+  }
+
+  /* Mobile burger stays correct */
+  .mobileBurger {
+    right: 1rem;
+  }
+}
+
+
+/* Mobile logo (shown only on mobile) */
+.mobileLogo {
+  display: none;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 992px) {
+  /* Reset row and columns for mobile */
+  .row.g-0 {
+    flex-direction: column;
+  }
+  
+  .col-3, .col-9 {
+    width: 100%;
+  }
+  
+  /* Hide desktop logo column on mobile */
+  .col-3 {
+    display: none;
+  }
+  
+  /* Show mobile logo in header */
+  .headerWrapper::before {
+    content: '';
+    display: block;
+    background: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .mobileLogo {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    background: #fff;
+  }
+  
+  .mobileLogo img {
+    max-height: 3rem;
+    width: auto;
+  }
+  
+  /* Adjust header wrapper */
+  .headerWrapper {
+    min-height: auto;
+  }
+  
+  /* Top bar adjustments */
+  .topBar {
+    height: auto;
+    padding: 0.5rem 0;
+    margin-top: -9%;
+  }
+  
+  .topContent {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .topLeft .locationText {
+    display: block;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  
+  /* Lower bar adjustments */
+  .navContainer {
+    padding: 0;
+  }
+  
+  .navContent {
+    flex-direction: column;
+    padding: 0 1rem;
+    width: 100%;
+  }
+  
+  .navLinks {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  
+  .rightGroup {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-top: 1px solid #f2f4f6;
+    margin-top: 0.6rem;
+  }
+  
+  .link {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  /* Make the customheader behave like a Bootstrap col-12 on mobile */
+  .customheader {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Medium screens adjustment */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .navLinks {
+    gap: 1rem;
+  }
+  
+  .locationText {
+    font-size: 0.8rem;
+  }
+  
+  .topContent,
+  .navContent {
+    padding: 0 1%;
+  }
+
+}
+
