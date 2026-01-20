@@ -75,7 +75,7 @@ export default function Header() {
                       <Nav.Link href="/" className={styles.link}>Home</Nav.Link>
                       <Nav.Link href="/About" className={styles.link}>About Us</Nav.Link>
                       <Nav.Link href="/products" className={styles.link}>Products & Solutions</Nav.Link>
-                      <Nav.Link href="/contact" className={styles.link}>Contact Us</Nav.Link>
+                      {/* <Nav.Link href="/contact" className={styles.link}>Contact Us</Nav.Link> */}
                     </Nav>
 
                     <div className={styles.rightGroup}>
